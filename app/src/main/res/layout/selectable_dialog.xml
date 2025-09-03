@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:layout_margin="7dp"
+    android:background="@drawable/rounded_corner"
+    android:layout_height="wrap_content">
+    <pl.droidsonroids.gif.GifImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/click"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/please_tap_on_a_specific_place_on_the_map_to_select_your_start_point"
+        android:fontFamily="@font/poppin"
+        android:textAlignment="center"
+        android:padding="12dp"
+        android:textColor="@color/black"
+        />
+</LinearLayout>

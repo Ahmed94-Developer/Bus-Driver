@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.task.busdriver">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32"
+        tools:ignore="ScopedStorage" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+
+
+
+    <application
+        android:name=".view.App"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:focusable="false"
+        android:focusableInTouchMode="true"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/marker_foreground"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.GeeksforGeeks"
+        android:usesCleartextTraffic="true"
+        android:windowSoftInputMode="adjustPan"
+        tools:ignore="MissingClass"
+        tools:replace="android:allowBackup"
+        tools:targetApi="31">
+        <activity
+            android:name=".view.ui.activities.auth.register.RegisterActivity"
+            android:exported="false"
+            android:label="@string/title_activity_register"
+            android:theme="@style/Theme.GeeksforGeeks" />
+        <activity
+            android:name=".view.ui.activities.base.StartActivity"
+            android:exported="true"
+            android:label="Bus-Driver"
+            android:theme="@style/Theme.GeeksforGeeks">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.ui.activities.destination.FinalDestinationActivity"
+            android:exported="false"
+            android:label="@string/title_activity_final_destination"
+            android:theme="@style/Theme.GeeksforGeeks" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAOUHi3a5pVznZMypdTl6FNZ8_T7WYBA0I" />
+
+        <activity
+            android:name=".view.ui.activities.destination.DestinationsActivity"
+            android:exported="false"
+            android:label="@string/title_activity_destinations"
+            android:theme="@style/Theme.GeeksforGeeks">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.ALTERNATIVE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.ui.activities.map.MapActivity"
+            android:exported="false"
+            android:label="@string/title_activity_map"
+            android:theme="@style/Theme.MaterialComponents" />
+
+        <uses-library
+            android:name="org.osmdroid"
+            android:required="false" />
+
+        <activity
+            android:name=".view.ui.activities.home.HomeActivity"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            tools:ignore="RedundantLabel" />
+        <activity
+            android:name=".view.ui.activities.splash.SplashActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.MyApplication3"
+            tools:ignore="RedundantLabel"></activity>
+        <activity
+            android:name=".view.ui.activities.auth.login.LoginActivity"
+            android:exported="true"
+            android:focusable="false"
+            android:focusableInTouchMode="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.AppCompat"
+            android:windowSoftInputMode="stateAlwaysVisible|adjustPan"
+            tools:ignore="RedundantLabel" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+    </application>
+
+</manifest>

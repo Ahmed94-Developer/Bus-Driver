@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "84055543106",
+    "project_id": "bus-driver-2fb66",
+    "storage_bucket": "bus-driver-2fb66.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:84055543106:android:f65b768665c10b04fa0cdb",
+        "android_client_info": {
+          "package_name": "com.task.busdriver"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzKbfxDYH9rFS6lpybS26MY9Bh_2rRDmA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

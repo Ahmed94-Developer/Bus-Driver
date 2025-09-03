@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:ignore="RedundantNamespace">
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/fab_main2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="16dp"
+            android:layout_marginEnd="339dp"
+            android:layout_marginBottom="659dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"
+            android:fontFamily="@font/poppin"
+            android:importantForAccessibility="no"
+            android:textColor="@color/white"
+            android:textAlignment="center"
+            android:src="@drawable/pause"
+            android:text="Stop"
+            app:backgroundTint="@android:color/holo_blue_dark"
+            tools:ignore="HardcodedText" />
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/fab_main"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="16dp"
+            android:layout_marginBottom="659dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"
+            android:fontFamily="@font/poppin"
+            android:textColor="@color/white"
+            android:textAlignment="center"
+            android:importantForAccessibility="no"
+            android:src="@drawable/play"
+            android:text="Start"
+            app:backgroundTint="@android:color/holo_blue_dark"
+            tools:ignore="HardcodedText" />
+
+        <Toolbar
+            android:id="@+id/my_toolbar"
+            android:layout_width="match_parent"
+
+            android:layout_height="?attr/actionBarSize"
+            android:background="@android:color/holo_blue_dark"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            android:elevation="1dp" />
+
+        <org.osmdroid.views.MapView
+            android:id="@+id/map"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </org.osmdroid.views.MapView>
+
+    </RelativeLayout>
+
+</layout>

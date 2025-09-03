@@ -1,0 +1,160 @@
+plugins {
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.kotlin.kapt)
+    alias(libs.plugins.dagger.hilt.android)
+    alias(libs.plugins.dagger.hilt)
+    alias (libs.plugins.google.gms)
+    alias(libs.plugins.devKsp)
+}
+
+android {
+    namespace "com.task.busdriver"
+    compileSdk 36
+    compileOptions.incremental = false
+    defaultConfig {
+        applicationId "com.task.busdriver"
+        minSdk 24
+        targetSdk 36
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+
+    }
+    kotlinOptions {
+        jvmTarget = '11'
+    }
+    buildFeatures {
+        compose true
+        //noinspection DataBindingWithoutKapt
+        dataBinding true
+        viewBinding true
+    }
+    composeOptions {
+        kotlinCompilerVersion = "2.0.0"
+        kotlinCompilerExtensionVersion = "1.2.0-SNAPSHOT"
+    }
+    buildscript {
+        repositories {
+            mavenCentral()
+            flatDir {
+                dirs 'libs' // This is where your AAR file is located
+            }// this line need
+        }
+    }
+}
+kapt {
+    correctErrorTypes = true
+    javacOptions {
+        option("-Adagger.hilt.android.internal.disableAndroidSuperclassValidation=true")
+    }
+}
+
+
+dependencies {
+
+    implementation libs.androidx.core.ktx
+    implementation libs.androidx.lifecycle.runtime.ktx
+    implementation libs.androidx.activity.compose
+    implementation platform(libs.androidx.compose.bom)
+    implementation libs.androidx.ui
+    implementation libs.androidx.ui.graphics
+    implementation libs.androidx.ui.tooling.preview
+    implementation libs.androidx.material3
+    implementation libs.serializable
+    implementation libs.retrofit
+    implementation libs.dagger
+    implementation libs.converter.gson
+    implementation libs.hilt.android
+    implementation libs.lifecycle.extension
+    implementation libs.lifecycle.viewmodel
+    implementation libs.hilt.navigation.compose
+    implementation libs.compose.ui
+    implementation(libs.navigation.fragment)
+    implementation(libs.curved.bottom.nav.bar)
+    implementation libs.hilt.gradle.plugin
+    implementation libs.lifecycle.viewmodel.compose
+    implementation libs.play.services.contextmanager
+    implementation libs.androidx.room.ktx
+    implementation libs.compose.material
+    implementation libs.androidx.navigation.ui.ktx
+    implementation(libs.coil)
+    implementation(libs.coil.gif)
+    implementation(libs.coil.compose)
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.auth)
+    implementation (libs.androidx.room.ktx)
+    implementation (libs.androidx.room.runtime.v111)
+    implementation (libs.kotlinx.coroutines.play.services)
+    implementation(libs.compose.material)
+    implementation(platform("org.jetbrains.kotlin:kotlin-bom:1.8.0"))
+    implementation("androidx.activity:activity-ktx:1.8.0")
+    implementation("com.google.android.material:material:1.11.0")
+    implementation ('com.google.android.libraries.places:places:3.3.0')
+    implementation ('pl.droidsonroids.gif:android-gif-drawable:1.2.25')
+    implementation(platform("com.google.firebase:firebase-bom:34.2.0"))
+
+    // Add the dependency for the Realtime Database library
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    implementation("com.google.firebase:firebase-database")
+    implementation (libs.material.v1120)
+    implementation (libs.androidx.appcompat)
+    //noinspection GradleDependency
+    implementation (libs.play.services.auth)
+    implementation (libs.play.services.base)
+
+    implementation (libs.androidx.navigation.ui.ktx)
+    implementation ("androidx.appcompat:appcompat:1.7.1")
+   // When using the BoM, you don't specify versins in Firebase library dependencies
+
+    // Add the dependency for the Firebase SDK for Google Analytics
+    implementation(libs.firebase.analytics)
+    implementation(libs.accompanist.drawablepainter)
+    implementation ("org.osmdroid:osmdroid-android:6.1.13")
+    implementation ("org.osmdroid:osmdroid-geopackage:6.1.13")
+    implementation ("org.osmdroid:osmdroid-wms:6.1.16")
+    implementation ("com.google.android.gms:play-services-location:21.3.0")
+    implementation ("com.google.android.gms:play-services-base:18.7.2")
+    implementation ('com.google.android.gms:play-services-places:17.1.0')
+    implementation ("com.google.android.gms:play-services-maps:19.2.0")
+    implementation "com.google.android.gms:play-services-gcm:17.0.0"
+    implementation 'com.google.android.gms:play-services-auth:21.4.0'
+    implementation 'com.google.firebase:firebase-messaging:25.0.0'
+    implementation 'com.google.firebase:firebase-analytics:23.0.0'
+  //  implementation (libs.osmdroid.osmdroid.third.party)
+    implementation libs.material
+    implementation libs.androidx.appcompat
+    implementation libs.androidx.constraintlayout
+    implementation libs.androidx.navigation.fragment.ktx
+    kapt libs.hilt.android.compiler
+    kapt libs.hilt.compiler
+    implementation libs.dagger.android.support
+    implementation(platform(libs.okhttp.bom))
+    implementation(libs.okhttp)
+    implementation(libs.logging.interceptor)
+    annotationProcessor libs.dagger.android.processor
+    annotationProcessor libs.androidx.room.compiler
+    kapt ("androidx.room:room-compiler:2.7.2")
+    annotationProcessor libs.dagger.compiler
+    testImplementation libs.junit
+    androidTestImplementation libs.androidx.junit
+    androidTestImplementation libs.androidx.espresso.core
+    androidTestImplementation platform(libs.androidx.compose.bom)
+    androidTestImplementation libs.androidx.ui.test.junit4
+    debugImplementation libs.androidx.ui.tooling
+    debugImplementation libs.androidx.ui.test.manifest
+}
